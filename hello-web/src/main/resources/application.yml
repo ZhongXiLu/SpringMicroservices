@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ${springboot.app.name:hello-web}
+  freemarker:
+    suffix: .ftl
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://discovery:8761/eureka/}

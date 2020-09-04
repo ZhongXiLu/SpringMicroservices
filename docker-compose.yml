@@ -1,0 +1,45 @@
+version: '3'
+
+networks:
+  demo:
+    driver: bridge
+
+services:
+
+  discovery:
+    image: zhongxilu/discovery
+    container_name: discovery
+    build:
+      context: ./discovery
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - demo
+
+  hello:
+    image: zhongxilu/hello
+    container_name: hello
+    build:
+      context: ./hello
+      dockerfile: Dockerfile
+    ports:
+      - "7500:8080"
+    depends_on:
+      - discovery
+    networks:
+      - demo
+
+  hello-web:
+    image: zhongxilu/hello-web
+    container_name: hello-web
+    build:
+      context: ./hello-web
+      dockerfile: Dockerfile
+    ports:
+      - "7501:8080"
+    depends_on:
+      - discovery
+      - hello
+    networks:
+      - demo
