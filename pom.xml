@@ -8,6 +8,7 @@
         <module>discovery</module>
         <module>hello</module>
         <module>hello-web</module>
+        <module>zuul</module>
     </modules>
 
     <parent>

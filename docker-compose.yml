@@ -17,6 +17,19 @@ services:
     networks:
       - SpringMicroservices
 
+  zuul:
+    image: zhongxilu/zuul
+    container_name: zuul
+    build:
+      context: ./zuul
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8762"
+    depends_on:
+      - discovery
+    networks:
+      - SpringMicroservices
+
   hello:
     image: zhongxilu/hello
     container_name: hello
@@ -27,6 +40,7 @@ services:
       - "7500:8080"
     depends_on:
       - discovery
+      - zuul
     networks:
       - SpringMicroservices
 
@@ -40,6 +54,7 @@ services:
       - "7501:8080"
     depends_on:
       - discovery
+      - zuul
       - hello
     networks:
       - SpringMicroservices
