@@ -17,11 +17,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>com.github</groupId>
+    <artifactId>spring-microservices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>SpringMicroservices</name>
+    <description>Demo project for Spring Microservices</description>
 
     <properties>
         <java.version>11</java.version>

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
-public class HellWebController {
+public class HelloWebController {
 
     @Autowired
     private EurekaClient discoveryClient;
